@@ -1,6 +1,8 @@
 package ru.yazgevich.collection;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.ConcurrentModificationException;
+import java.util.Objects;
 
 /**
  * This class is my LinkedList version. It implements only CRUD operations,{@code subList},
@@ -299,10 +301,10 @@ public class MyLinkedList<E> {
         boolean result = size == that.size;
         Node<E> thisNode = head;
         Node<?> thatNode = that.head;
-        while (thisNode != null){
+        while (thisNode != null) {
             if (thatNode != null) {
-                result &= Objects.equals(thisNode.value,thatNode.value);
-            }else return false;
+                result &= Objects.equals(thisNode.value, thatNode.value);
+            } else return false;
             thisNode = thisNode.next;
             thatNode = thatNode.next;
         }

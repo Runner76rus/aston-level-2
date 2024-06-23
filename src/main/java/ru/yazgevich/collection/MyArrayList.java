@@ -1,15 +1,18 @@
 package ru.yazgevich.collection;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.ConcurrentModificationException;
+import java.util.List;
+import java.util.Objects;
 
 /**
  * * This class is my ArrayList version. It implements only CRUD operations,{@code subList},
- *  * {@code hashCode},{@code toString} and {@code equals}.
- *  * The remaining operations use standard implementation.
+ * * {@code hashCode},{@code toString} and {@code equals}.
+ * * The remaining operations use standard implementation.
  *
  * @param <E> - the type of elements in this list
  */
-public class MyArrayList<E>{
+public class MyArrayList<E> {
 
     private static final int DEFAULT_CAPACITY = 10;
     /**
@@ -20,7 +23,7 @@ public class MyArrayList<E>{
     /**
      * The number of times this list has been structurally modified.
      * Structural modifications are those that change the size of the list,
-     *      * or otherwise perturb it in such a fashion that iterations in progress may yield incorrect results.
+     * * or otherwise perturb it in such a fashion that iterations in progress may yield incorrect results.
      */
     private int modCount = 0;
 
@@ -243,7 +246,7 @@ public class MyArrayList<E>{
         StringBuilder sb = new StringBuilder();
         if (size == 0) return "[]";
         sb.append("[");
-        for(E e : elementData) {
+        for (E e : elementData) {
             sb.append(e);
             sb.append(", ");
         }
